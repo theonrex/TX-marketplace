@@ -177,25 +177,28 @@ function Homebanner() {
               <p>{homeNft?.price} MATIC</p>
             </div>
             <div className="bid-btn">
-                  {!isConnected ? (
-                    <button className="purchase-btn" onClick={connectWallet}>
-                      Purchase
-                    </button>
-                  ) : (
-                    <button
-                      className="purchase-btn"
-                      onClick={() =>
-                        buyNFT(homeNft?.price.toString(), homeNft.tokenId)
-                      }
-                    >
-                      {" "}
-                      Purchase
-                    </button>
-                  )}
-                  <button className="bids-btn" onClick={placeBid}>
+  <button className="purchase-btn">
+                {!isConnected ? (
+              
+                  <a href="/#" onClick={connectWallet}>
                     {" "}
-                    <a href="/#"> Place a bid</a>
-                  </button>
+                    Purchase
+                  </a>
+                ) : (
+                  <a
+                    href="/#"
+                     onClick={() =>
+                      buyNFT(homeNft?.price.toString(), homeNft.tokenId)
+                    }
+                  >
+                    {" "}
+                    Purchase
+                  </a>
+
+               
+                )}
+              </button>
+
                 </div>
           </div>
         </div>
